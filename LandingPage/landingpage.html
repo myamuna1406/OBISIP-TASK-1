@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landingp Page</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<!--********************************************************************CSS**************************************************************************-->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Luckiest+Guy&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: url("imagebg1.png")no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    header {
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding: 30px 100px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .logo-name {
+        color: #FFFFFF;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .exp-logo-name {
+        color: #59323f;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+
+    header .nav-bar a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 2px 15px;
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+
+    header .nav-bar a:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    header .nav-bar a:hover {
+        transform: scale(1.5);
+        color: #53B7EE;
+    }
+
+    .main-content {
+        max-width: 650px;
+        margin: 50px 100px;
+    }
+
+    .main-content .main-info h1 {
+        color: #53B7EE;
+        font-size: 55px;
+        text-transform: unset;
+        font-family: 'Luckiest Guy', cursive;
+        line-height: 60px;
+        letter-spacing: 5px;
+        font-weight: 800px;
+        margin-bottom: 30px;
+    }
+
+    .main-content .main-info h1 span {
+        color: #53B7EE;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .main-content .main-info p {
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 600px;
+        margin-bottom: 40px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .main-content .main-info-btn1 {
+        color: #FFFFFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #53B7EE;
+    }
+
+    .main-content .main-info-btn2 {
+        color: #53B7EE;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .main-content .main-info-btn1:hover {
+        background: #53B7EE;
+    }
+
+    .main-content .main-info-btn2:hover {
+        color: #FFFFFF
+    }
+
+    .medio-icon {
+        display: flex;
+        float: left;
+        margin: 150px 100px;
+    }
+
+    .medio-icon a {
+        position: relative;
+        color: #59323f;
+        font-size: 25px;
+        transition: 0.3s;
+        transition-property: transform;
+    }
+
+    .medio-icon a:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .medio-icon a:hover {
+        transform: scale(1.5);
+    }
+
+    label {
+        display: none;
+    }
+
+    #check {
+        z-index: 3;
+        display: none;
+    }
+
+    .fa-bars,
+    .fa-xmark {
+        color: #FFFFFF
+    }
+
+    /*********************************************************************RESPONSIVE-960**************************************************************************/
+
+    @media(max-width:960px) {
+        header .nav-bar {
+            display: none;
+        }
+
+        label {
+            display: block;
+            font-size: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            transition-property: color;
+        }
+
+        label:hover {
+            color: #53B7EE;
+        }
+
+        label .fa-xmark {
+            display: none;
+        }
+
+        #check:checked~header .nav-bar {
+            z-index: 2;
+            align-items: center;
+            position: fixed;
+            background: #1E1F23;
+            opacity: 0.9;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #check:checked~header .nav-bar a {
+            font-weight: 700;
+            margin-right: 0;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        #check:checked~header label .fa-bars {
+            display: none;
+        }
+
+        #check:checked~header label .fa-xmark {
+            display: block;
+            z-index: 2;
+            position: fixed;
+        }
+
+        label .fa-bars {
+            position: absolute;
+        }
+
+        header .logo {
+            position: absolute;
+            bottom: -6px;
+        }
+
+        .main-content .main-info h2 {
+            font-size: 45px;
+            line-height: 50px;
+        }
+
+        .main-content .main-info h2 span {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .main-content .main-info p {
+            font-size: 14px;
+        }
+    }
+
+    @media(max-width:560px) {
+        .main-content .main-info h2 {
+            font-size: 35px;
+            line-height: 40px;
+        }
+
+        .main-content .main-info h2 span {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .main-content .main-info p {
+            font-size: 16px;
+        }
+
+    }
+
+    .exp-text {
+        width: 100%;
+    }
+
+    span.exp-logo-name {
+        display: none;
+    }
+
+    .exp-text:hover span.logo-name {
+        display: none;
+    }
+
+    .exp-text:hover span.exp-logo-name {
+        display: block;
+    }
+
+    .text {
+        color: #53B7EE;
+        font-size: 24px;
+    }
+</style>
+
+<!--*******************************************************************HTML-BODY*************************************************************************-->
+
+<body>
+    <section>
+        <input type="checkbox" id="check">
+        <header>
+            <h2><a href="#" class="logo">
+                    <div class="exp-text">
+                        <p class="text"><span class="logo-name">Y</span><span class="exp-logo-name">Yamuna</span></p>
+                    </div>
+                </a></h2>
+            <div class="nav-bar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">For Developers</a>
+                <a href="#">Team</a>
+                <a href="#">Contact</a>
+            </div>
+            <label for="check">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </label>
+        </header>
+
+        <div class="main-content">
+            <div class="main-info">
+                <h1>art of learning !</h1>
+                <p>The key to pursuing excellence is to embrace an organic, long-term learning process,
+                    and not to live in a shell of static, safe mediocrity<br><b>Growth comes at the point of
+                        resistance</b></p>
+                <a href="#" class="main-info-btn1">Skill Alert</a>
+                <a href="#" class="main-info-btn2">More Main-info</a>
+            </div>
+        </div>
+
+        <div class="medio-icon">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+    </section>
+</body>
+
+</html>
